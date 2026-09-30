@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:Hilal}",
+      "name": "Debug pray.daily",
+      "target": "pray.daily",
+      "configuration": "debug",
+      "preLaunchTask": "swift: Build Debug pray.daily"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:Hilal}",
+      "name": "Release pray.daily",
+      "target": "pray.daily",
+      "configuration": "release",
+      "preLaunchTask": "swift: Build Release pray.daily"
+    }
+  ]
+}

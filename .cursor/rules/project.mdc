@@ -1,0 +1,20 @@
+---
+description: pray.daily project overview, commands, and invariants
+alwaysApply: true
+---
+
+pray.daily is a prayer/fasting companion. One shared Swift core in `Sources/Hilal/` powers a macOS menu bar app (SwiftPM, macOS 14+) and an iPhone app (`ios/`, XcodeGen, iOS 17+). Full details: @CLAUDE.md
+
+- Build Mac app: `./build.sh` (release build, assembles and ad-hoc signs `pray.daily.app`). Never hand-edit `pray.daily.app`.
+- Test: `./test.sh`; `./test.sh --live` also hits AlAdhan and Apple's geocoder.
+- Keep Mac bundle ID `com.reza.hilal` (preserves user preferences). Swift target stays `Hilal`; product is `pray.daily`.
+- Shared state lives in the `@MainActor Store` (`Model.swift`); both UIs bind to it. Put logic there or in the pure helpers, not in views.
+- Platform-specific code uses `#if os(iOS)` / `#if os(macOS)`; resources use `Bundle.module` under `#if SWIFT_PACKAGE`, else `Bundle.main`.
+
+Invariants guarded by tests:
+- Changing location, method, Asr school, or Hijri adjustment hides the old schedule and removes its reminders until new times arrive; stale responses must never overwrite a newer selection (`generation` counter).
+- Sound, lead-time, and notification toggles reschedule reminders without refetching times.
+- Display timezone never alters the API request or a prayer's instant.
+- Hijri adjustment shifts only the Hijri date (via the adjacent Gregorian day), never timings; don't send `adjustment` to the API.
+- Failed refreshes keep cached times and reminders and retry after five minutes.
+- Notification triggers use UTC date components.

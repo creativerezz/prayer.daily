@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04F69D7E10182465C0688B20 /* Pop.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 78D03BBF54BBBC525625B2B5 /* Pop.aiff */; };
+		2E2901B0CA9138D38BF0B544 /* MobileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69C6C8975775A7FB444C7B /* MobileSettings.swift */; };
+		3131682EC2CDBE1CB37CEF19 /* Ping.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E1AE7689A97598345C4B447A /* Ping.aiff */; };
+		35641557EC714367ACBDFBBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F9D59A8DC2B395CCF04165C /* Assets.xcassets */; };
+		45B27CCFE30C495744D7298B /* Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41FA568F4DA9662DE8F4628 /* Reminders.swift */; };
+		501B43BC0DE669247304CCF7 /* PrayDailyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2BBB82A1C4AEFB56CAE5E7 /* PrayDailyApp.swift */; };
+		5CF998F79651C26105FBC3A4 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8F9CF23CE2A2BB3E5337A /* Timing.swift */; };
+		620F4D590CCDF05003643050 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F8884C2722189C3FE4326E /* Preferences.swift */; };
+		68EA972336F81EBB69A3EF36 /* methods.json in Resources */ = {isa = PBXBuildFile; fileRef = 905D30310F49D3E39CA51260 /* methods.json */; };
+		72F819714398C78D26250B4C /* MobileRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030282DC91C4FC5CCFF7519 /* MobileRoot.swift */; };
+		A10EAECD5FA7699BDA057366 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 57AD00704210FEC09F050627 /* PrivacyInfo.xcprivacy */; };
+		D8CA43A13CC1388E20A94244 /* PrayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64407B9C239AA89F821D9B5D /* PrayerService.swift */; };
+		DC5C96B9EF210A90BD69BDC5 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAC0A525D1FF13DB36DC5A /* NotificationService.swift */; };
+		E7EFD92D0FE953E46638BD65 /* Glass.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 22ED2A7D2D62389024C3C394 /* Glass.aiff */; };
+		FCDBC9F7EAA71E117F82FF12 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501DE12841CF243A4CB28AD4 /* Model.swift */; };
+		FFF46155A27DDBA514916440 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CF21A4CD44B52BDC32E885 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		22ED2A7D2D62389024C3C394 /* Glass.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Glass.aiff; sourceTree = "<group>"; };
+		4F9D59A8DC2B395CCF04165C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		501DE12841CF243A4CB28AD4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		57AD00704210FEC09F050627 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		64407B9C239AA89F821D9B5D /* PrayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerService.swift; sourceTree = "<group>"; };
+		78D03BBF54BBBC525625B2B5 /* Pop.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Pop.aiff; sourceTree = "<group>"; };
+		905D30310F49D3E39CA51260 /* methods.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = methods.json; sourceTree = "<group>"; };
+		90B8F9CF23CE2A2BB3E5337A /* Timing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timing.swift; sourceTree = "<group>"; };
+		A3A6F6C971FBBF392FB277D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A41FA568F4DA9662DE8F4628 /* Reminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminders.swift; sourceTree = "<group>"; };
+		A474EA4F4D4AA66F85CA397E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AC2BBB82A1C4AEFB56CAE5E7 /* PrayDailyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayDailyApp.swift; sourceTree = "<group>"; };
+		BC69C6C8975775A7FB444C7B /* MobileSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileSettings.swift; sourceTree = "<group>"; };
+		C2F8884C2722189C3FE4326E /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		D030282DC91C4FC5CCFF7519 /* MobileRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileRoot.swift; sourceTree = "<group>"; };
+		D12BD44D930980B40FC58547 /* PrayDaily.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PrayDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1AE7689A97598345C4B447A /* Ping.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Ping.aiff; sourceTree = "<group>"; };
+		F9BAC0A525D1FF13DB36DC5A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		47EE6E858102B17C6D1F0AF4 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				22ED2A7D2D62389024C3C394 /* Glass.aiff */,
+				E1AE7689A97598345C4B447A /* Ping.aiff */,
+				78D03BBF54BBBC525625B2B5 /* Pop.aiff */,
+			);
+			name = Sounds;
+			path = ../Resources/Sounds;
+			sourceTree = "<group>";
+		};
+		8DDB3350CD44E5BED4BD22D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D12BD44D930980B40FC58547 /* PrayDaily.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC5C98692CBEF119A42E3B5B /* PrayDaily */ = {
+			isa = PBXGroup;
+			children = (
+				4F9D59A8DC2B395CCF04165C /* Assets.xcassets */,
+				A474EA4F4D4AA66F85CA397E /* Info.plist */,
+				D030282DC91C4FC5CCFF7519 /* MobileRoot.swift */,
+				BC69C6C8975775A7FB444C7B /* MobileSettings.swift */,
+				AC2BBB82A1C4AEFB56CAE5E7 /* PrayDailyApp.swift */,
+				57AD00704210FEC09F050627 /* PrivacyInfo.xcprivacy */,
+				B0CF21A4CD44B52BDC32E885 /* LaunchScreen.storyboard */,
+			);
+			path = PrayDaily;
+			sourceTree = "<group>";
+		};
+		EDFEF0EBE956B1BFA7D6007D = {
+			isa = PBXGroup;
+			children = (
+				F12BA2D96A7011A767E7355F /* Hilal */,
+				BC5C98692CBEF119A42E3B5B /* PrayDaily */,
+				47EE6E858102B17C6D1F0AF4 /* Sounds */,
+				8DDB3350CD44E5BED4BD22D5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F12BA2D96A7011A767E7355F /* Hilal */ = {
+			isa = PBXGroup;
+			children = (
+				905D30310F49D3E39CA51260 /* methods.json */,
+				501DE12841CF243A4CB28AD4 /* Model.swift */,
+				F9BAC0A525D1FF13DB36DC5A /* NotificationService.swift */,
+				64407B9C239AA89F821D9B5D /* PrayerService.swift */,
+				C2F8884C2722189C3FE4326E /* Preferences.swift */,
+				A41FA568F4DA9662DE8F4628 /* Reminders.swift */,
+				90B8F9CF23CE2A2BB3E5337A /* Timing.swift */,
+			);
+			name = Hilal;
+			path = ../Sources/Hilal;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E5AC4FC46D1826C6253B03C /* PrayDaily */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0A5256447B89124A4F87D69 /* Build configuration list for PBXNativeTarget "PrayDaily" */;
+			buildPhases = (
+				B05BB096DB2376AA73506878 /* Sources */,
+				FB9C2EBB33319A38CC7D804C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PrayDaily;
+			packageProductDependencies = (
+			);
+			productName = PrayDaily;
+			productReference = D12BD44D930980B40FC58547 /* PrayDaily.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9B162A0577E7081C3761D0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					6E5AC4FC46D1826C6253B03C = {
+						DevelopmentTeam = G56KC8CS7Z;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 0D498B628493EB233ECAB6ED /* Build configuration list for PBXProject "PrayDaily" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = EDFEF0EBE956B1BFA7D6007D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 8DDB3350CD44E5BED4BD22D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E5AC4FC46D1826C6253B03C /* PrayDaily */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB9C2EBB33319A38CC7D804C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35641557EC714367ACBDFBBA /* Assets.xcassets in Resources */,
+				E7EFD92D0FE953E46638BD65 /* Glass.aiff in Resources */,
+				FFF46155A27DDBA514916440 /* LaunchScreen.storyboard in Resources */,
+				3131682EC2CDBE1CB37CEF19 /* Ping.aiff in Resources */,
+				04F69D7E10182465C0688B20 /* Pop.aiff in Resources */,
+				A10EAECD5FA7699BDA057366 /* PrivacyInfo.xcprivacy in Resources */,
+				68EA972336F81EBB69A3EF36 /* methods.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B05BB096DB2376AA73506878 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72F819714398C78D26250B4C /* MobileRoot.swift in Sources */,
+				2E2901B0CA9138D38BF0B544 /* MobileSettings.swift in Sources */,
+				FCDBC9F7EAA71E117F82FF12 /* Model.swift in Sources */,
+				DC5C96B9EF210A90BD69BDC5 /* NotificationService.swift in Sources */,
+				501B43BC0DE669247304CCF7 /* PrayDailyApp.swift in Sources */,
+				D8CA43A13CC1388E20A94244 /* PrayerService.swift in Sources */,
+				620F4D590CCDF05003643050 /* Preferences.swift in Sources */,
+				45B27CCFE30C495744D7298B /* Reminders.swift in Sources */,
+				5CF998F79651C26105FBC3A4 /* Timing.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B0CF21A4CD44B52BDC32E885 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3A6F6C971FBBF392FB277D3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3376D8C6695E69991000E484 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Sage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PrayDaily/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reza.praydaily;
+				PRODUCT_NAME = pray.daily;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		43CC544F03A23503A6C0A300 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = G56KC8CS7Z;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		6172E9C2DB4D2BE1ABC047F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Sage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PrayDaily/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reza.praydaily;
+				PRODUCT_NAME = pray.daily;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		F1B015698A5BF4BD2967E673 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = G56KC8CS7Z;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D498B628493EB233ECAB6ED /* Build configuration list for PBXProject "PrayDaily" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1B015698A5BF4BD2967E673 /* Debug */,
+				43CC544F03A23503A6C0A300 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F0A5256447B89124A4F87D69 /* Build configuration list for PBXNativeTarget "PrayDaily" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3376D8C6695E69991000E484 /* Debug */,
+				6172E9C2DB4D2BE1ABC047F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9B162A0577E7081C3761D0A /* Project object */;
+}
