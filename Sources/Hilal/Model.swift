@@ -27,6 +27,7 @@ import UserNotifications
     private var refreshTask: Task<Void, Never>?
     private var notificationTask: Task<Void, Never>?
     private var pendingPermissionRequest = false
+    private var startupRefreshPending = false
     private var nextRetry = Date.distantPast
     private var observedSystemZone = TimeZone.current.identifier
 
@@ -66,6 +67,7 @@ import UserNotifications
         locationQuery = prefs.address
         location.delegate = self
         if startAutomatically {
+            startupRefreshPending = prefs.hasLocation
             UNUserNotificationCenter.current().delegate = self
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
                 Task { @MainActor in await self?.tick() }
@@ -73,7 +75,12 @@ import UserNotifications
             Task { [weak self] in
                 guard let self else { return }
                 await self.updateReminders()
-                if self.prefs.hasLocation { await self.refresh() }
+                guard self.prefs.hasLocation else {
+                    self.startupRefreshPending = false
+                    return
+                }
+                await self.refresh()
+                self.startupRefreshPending = false
             }
         }
     }
@@ -115,8 +122,8 @@ import UserNotifications
                 catch { return }
                 await self.refresh()
             }
-        } else if previous.alerts != prefs.alerts || previous.holyDays != prefs.holyDays || previous.lead != prefs.lead || previous.sound != prefs.sound || previous.timezone != prefs.timezone || previous.address != prefs.address {
-            let enabling = (!previous.alerts && prefs.alerts) || (!previous.holyDays && prefs.holyDays)
+        } else if previous.alerts != prefs.alerts || previous.holyDays != prefs.holyDays || previous.lead != prefs.lead || previous.sound != prefs.sound || previous.timezone != prefs.timezone || previous.address != prefs.address || previous.azanPrayers != prefs.azanPrayers {
+            let enabling = !previous.hasReminders && prefs.hasReminders
             enqueueReminders(requestPermission: enabling)
         }
     }
@@ -152,7 +159,7 @@ import UserNotifications
             enqueueReminders()
         }
         let fetchedToday = currentSchedule.map { dateKey($0.fetchedAt) == dateKey(now) } ?? false
-        if !loading && prefs.hasLocation && (!fetchedToday || nextRetry != .distantPast) && now >= nextRetry { await refresh() }
+        if !loading && !startupRefreshPending && prefs.hasLocation && (!fetchedToday || nextRetry != .distantPast) && now >= nextRetry { await refresh() }
     }
 
     private func enqueueReminders(requestPermission: Bool = false) {
@@ -173,7 +180,7 @@ import UserNotifications
         do {
             var access = await notifications.access()
             guard !Task.isCancelled else { return }
-            if pendingPermissionRequest && access == .notDetermined && (prefs.alerts || prefs.holyDays) {
+            if pendingPermissionRequest && access == .notDetermined && prefs.hasReminders {
                 access = try await notifications.requestAccess() ? .authorized : .denied
             }
             guard !Task.isCancelled else { return }
@@ -185,7 +192,7 @@ import UserNotifications
             case .denied: notificationStatus = "Allow pray.daily in \(systemSettings) → Notifications to receive reminders."
             case .notDetermined: notificationStatus = "Enable a reminder to allow notifications on this device."
             case .authorized:
-                if !prefs.alerts && !prefs.holyDays { notificationStatus = "Reminders are off." }
+                if !prefs.hasReminders { notificationStatus = "Reminders are off." }
                 else if today == nil { notificationStatus = "Reminders need current prayer times. Set a location or retry the refresh." }
                 else { notificationStatus = "\(plan.count) reminders scheduled. Changes save automatically." }
             }

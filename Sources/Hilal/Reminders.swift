@@ -26,7 +26,7 @@ enum ReminderPlan {
                     reminders.append(Reminder(
                         id: "\(day.date.gregorian.date)-\(prayer.name)",
                         title: "\(prayer.name) in \(preferences.lead) minutes",
-                        body: "Prayer time is \(PrayerClock.time(prayer.date, in: preferences.zone, locationZone: schedule.zone)) · \(preferences.address)",
+                        body: "Prayer time is \(PrayerClock.time(prayer.date, in: preferences.zone, locationZone: schedule.zone))",
                         date: prayer.date.addingTimeInterval(-Double(preferences.lead * 60)), sound: preferences.sound))
                 }
                 if preferences.azanIsOn(prayer.name) {
@@ -46,6 +46,6 @@ enum ReminderPlan {
                 }
             }
         }
-        return reminders.filter { $0.date > now }.sorted { $0.date < $1.date }
+        return Array(reminders.filter { $0.date > now }.sorted { $0.date < $1.date }.prefix(63))
     }
 }

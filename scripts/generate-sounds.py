@@ -15,6 +15,9 @@ recipes = {
     'Glass': (1.6, [(880, 1, 3.5), (1762, .3, 5), (2648, .12, 7)]),
     'Ping': (1.0, [(1174.66, 1, 6), (2349.32, .18, 9)]),
     'Pop': (.35, [(523.25, 1, 16), (1046.5, .2, 20)]),
+    # A slowly unfolding, harmonically rich tone synthesized from sine waves;
+    # this is an original notification tone, not a recorded adhan.
+    'Azan': (3.2, [(392, 1, 1.2), (587.33, .52, 1.8), (784, .28, 2.4), (1174.66, .1, 3.2)]),
 }
 with tempfile.TemporaryDirectory(prefix='pray-daily-tones-') as tmp:
     for name, (duration, partials) in recipes.items():

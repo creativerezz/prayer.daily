@@ -18,13 +18,13 @@ targets:
     platform: iOS
     sources:
       - path: PrayDaily
-      - path: ../Sources/Hilal
+      - path: ../../Sources/Hilal
         excludes:
           - Hilal.swift
           - methods.json
-      - path: ../Sources/Hilal/methods.json
+      - path: ../../Sources/Hilal/methods.json
         buildPhase: resources
-      - path: ../Resources/Sounds
+      - path: ../../Resources/Sounds
         buildPhase: resources
     settings:
       base:

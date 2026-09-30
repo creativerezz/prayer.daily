@@ -1,6 +1,6 @@
 # pray.daily
 
-A native prayer and fasting companion for iPhone and Mac. The iPhone app requires iOS 17 or later; see [iPhone build and TestFlight instructions](ios/README.md). The menu bar app requires macOS 14 or later and is built for Apple Silicon, ad-hoc signed for local use.
+A native prayer and fasting companion for iPhone and Mac. The iPhone app requires iOS 17 or later; see [iPhone build and TestFlight instructions](Assets/ios/README.md). The menu bar app requires macOS 14 or later and is built for Apple Silicon, ad-hoc signed for local use.
 
 ## Open
 
@@ -21,7 +21,8 @@ Settings save automatically. A calculation change refreshes prayer times after a
 | Display timezone | Formats the same prayer instants in the system or selected IANA timezone. Prayer-day dates remain local to the chosen location. A date suffix appears when a displayed time crosses into another day. |
 | Hijri adjustment | Shifts the provider's Hijri calendar by −2 to +2 days, including month/year boundaries, without moving prayer times. Ramadan and holy-day reminders use the adjusted date. |
 | Pre-prayer reminders | Schedules future prayers using the selected 10–30 minute lead time; turning it off removes those reminders. |
-| Sound | Applies Silent, the system default, Glass, Ping, or Pop to scheduled reminders. Preview plays the selected sound; Test notification exercises actual delivery. |
+| Sound | Applies Silent, the system default, Glass, Ping, or Pop to pre-prayer reminders. Preview plays the selected sound; Test notification exercises actual delivery. |
+| Azan | Plays the Azan tone when a chosen prayer begins. Separate from the pre-prayer sound. |
 | Holy day reminders | Schedules Qadr at Maghrib on the days preceding Ramadan 19, 21, and 23; Eid al-Fitr and Eid al-Adha at Fajr. |
 | Track a fast today | Enables voluntary fasting for the current date at the selected location; it expires the next day. Ramadan tracking is automatic. |
 
@@ -54,5 +55,5 @@ The build script assembles and ad-hoc signs `pray.daily.app`, including method d
 - All 25 timing and behavior tests pass and cover persistence, automatic settings application, Hijri month rollover, permission denial, reminder races, offline recovery, stale-response rejection, fasting expiry, next-day Fajr, DST, and silent notification triggers.
 - All 23 bundled calculation presets returned prayer data for a sample location. Live seven-day API checks verify method changes, Hanafi Asr, Hijri adjustment, and display timezone independence. Apple's city geocoder was checked with London, United Kingdom.
 - The Mac release app includes the new icon and original alert tones, builds, passes strict signature verification, and launches as a process.
-- The iPhone simulator build, signed archive, and distribution IPA export succeed. Onboarding was visually inspected. The development app was installed and launched on the paired iPhone, with its running process verified. TestFlight version 1.0.0 (1) is now Testing in the Personal testing group, and the sole account-owner tester is Invited. Installation through TestFlight and physical-device notification/location flows remain to be confirmed; see [release status](ios/README.md).
+- The iPhone simulator build, signed archive, and distribution IPA export succeed. Onboarding was visually inspected. The development app was installed and launched on the paired iPhone, with its running process verified. TestFlight version 1.0.0 (1) is now Testing in the Personal testing group, and the sole account-owner tester is Invited. Installation through TestFlight and physical-device notification/location flows remain to be confirmed; see [release status](Assets/ios/README.md).
 - Native UI inspection timed out. The rendered controls, device-location permission flow, and actual macOS notification presentation/sound remain unverified. Use **Settings → Test notification** to confirm delivery after granting permission.

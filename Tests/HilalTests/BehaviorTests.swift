@@ -56,12 +56,15 @@ private final class FakeLoader: PrayerLoading {
 
 private final class FixtureURLProtocol: URLProtocol {
     static var seen: [URL] = []
+    private static let seenLock = NSLock()
     static var malformed = false
     override class func canInit(with request: URLRequest) -> Bool { true }
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
     override func startLoading() {
         let url = request.url!
+        Self.seenLock.lock()
         Self.seen.append(url)
+        Self.seenLock.unlock()
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.timeZone = utc
@@ -163,6 +166,37 @@ private final class FixtureURLProtocol: URLProtocol {
             check(notifications.reminders.first!.date == instant("2026-09-26T11:30:00Z"), "Lead time was not applied")
             store.prefs.alerts = false
             await eventually { notifications.reminders.isEmpty }
+        }
+        try await test("turning on Fajr azan reschedules without a network fetch") {
+            let loader = FakeLoader(); let notifications = FakeReminders()
+            let (store, _) = makeStore(loader: loader, reminders: notifications)
+            await store.refresh(); let calls = loader.calls
+            store.prefs.azanPrayers = ["Fajr"]
+            await eventually { notifications.reminders.contains { $0.id.hasPrefix("azan-") && $0.sound == "Azan" } }
+            check(loader.calls == calls, "Azan setting unnecessarily refetched prayer times")
+        }
+        try await test("enabling only azan requests notification permission once") {
+            let notifications = FakeReminders(); notifications.status = .notDetermined
+            let (store, _) = makeStore(reminders: notifications)
+            await store.refresh()
+            check(notifications.requests == 0, "Permission was requested before reminders were enabled")
+            store.prefs.azanPrayers = ["Fajr"]
+            await eventually { notifications.requests == 1 && notifications.status == .authorized }
+            check(notifications.requests == 1 && notifications.reminders.contains { $0.sound == "Azan" }, "Azan-only permission flow failed")
+        }
+        try await test("pre-prayer reminder keeps the formatted time but not the address") {
+            var p = preferences(); p.alerts = true
+            let reminder = ReminderPlan.make(schedule: fixtureSchedule(p), preferences: p, now: testNow).first { $0.id.hasSuffix("-Fajr") }!
+            check(reminder.body.contains("5:00 AM") && !reminder.body.contains(p.address), "Pre-prayer body exposed the saved address or lost its time")
+        }
+        try await test("reminder plans keep only the 63 soonest future reminders") {
+            var p = preferences(); p.alerts = true
+            let start = instant("2026-09-25T00:00:00Z")
+            let days = (0...13).map { fixtureDay(start.addingTimeInterval(Double($0 * 86400))) }
+            let schedule = PrayerSchedule(calculation: p.calculation, timezone: "UTC", days: days, fetchedAt: start)
+            let plan = ReminderPlan.make(schedule: schedule, preferences: p, now: start)
+            let expectedLast = fixtureDay(start.addingTimeInterval(12 * 86400)).time("Asr")!.addingTimeInterval(-900)
+            check(plan.count == 63 && plan.first!.date == instant("2026-09-25T04:45:00Z") && plan.last!.date == expectedLast, "Reminder cap did not keep the 63 soonest items")
         }
         try await test("overlapping reminder updates finish with the latest settings") {
             let n = FakeReminders(); var p = preferences(); p.alerts = true

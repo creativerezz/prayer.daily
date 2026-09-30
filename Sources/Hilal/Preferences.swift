@@ -18,16 +18,6 @@ struct Preferences: Codable, Equatable {
 
     var hasReminders: Bool { alerts || holyDays || !(azanPrayers ?? []).isEmpty }
     func azanIsOn(_ prayer: String) -> Bool { azanPrayers?.contains(prayer) == true }
-    /// Prayers that play the azan when they begin. Missing on older saves, which stay off.
-    var azanPrayers: [String]?
-
-    var hasReminders: Bool { alerts || holyDays || !(azanPrayers ?? []).isEmpty }
-    func azanIsOn(_ prayer: String) -> Bool { azanPrayers?.contains(prayer) == true }
-    /// Prayers that play the azan when they begin. Missing on older saves, which stay off.
-    var azanPrayers: [String]?
-
-    var hasReminders: Bool { alerts || holyDays || !(azanPrayers ?? []).isEmpty }
-    func azanIsOn(_ prayer: String) -> Bool { azanPrayers?.contains(prayer) == true }
 
     var zone: TimeZone { timezone == "System" ? .current : TimeZone(identifier: timezone) ?? .current }
     var hasLocation: Bool {

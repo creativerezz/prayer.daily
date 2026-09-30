@@ -53,6 +53,22 @@ struct MobileSettings: View {
                     Button("Preview sound") { preview.play(store.prefs.sound) }
                 }
                 Toggle("Holy day reminders", isOn: $store.prefs.holyDays)
+                ForEach(["Fajr", "Dhuhr", "Asr", "Maghrib", "Isha"], id: \.self) { prayer in
+                    Toggle("\(prayer) azan", isOn: Binding(
+                        get: { store.prefs.azanIsOn(prayer) },
+                        set: { enabled in
+                            var prayers = store.prefs.azanPrayers ?? []
+                            if enabled {
+                                if !prayers.contains(prayer) { prayers.append(prayer) }
+                            } else {
+                                prayers.removeAll { $0 == prayer }
+                            }
+                            store.prefs.azanPrayers = prayers
+                        }
+                    ))
+                }
+                Text("Azan plays when each selected prayer begins, using the Azan tone.")
+                    .font(.footnote).foregroundStyle(.secondary)
                 Text(store.notificationStatus).font(.footnote).foregroundStyle(.secondary)
                 Button("Test notification") { Task { await store.testNotification() } }
                 Button("Open notification settings") {

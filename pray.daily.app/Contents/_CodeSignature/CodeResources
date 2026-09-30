@@ -8,13 +8,17 @@
 		<data>
 		FKKFPGIFzo9Znlqyi9cEHGxvmYM=
 		</data>
+		<key>Resources/Azan.aiff</key>
+		<data>
+		tATv+GGHFq714Z3gr0Tml/XnyZ8=
+		</data>
 		<key>Resources/Glass.aiff</key>
 		<data>
 		kpI6Goey2mVJzq8Tbl71F2ToLI0=
 		</data>
 		<key>Resources/Hilal_Hilal.bundle/Contents/Info.plist</key>
 		<data>
-		fi2/pv6M/4FE47McYcP4+YrKEmE=
+		6R5Aqrb5T26YleRbjm//nVf14e4=
 		</data>
 		<key>Resources/Hilal_Hilal.bundle/Contents/Resources/methods.json</key>
 		<data>
@@ -38,6 +42,13 @@
 			3/glIC66NP7an8ezk6qu+Vbe5Fy5x9JrHNH438LagZw=
 			</data>
 		</dict>
+		<key>Resources/Azan.aiff</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			48FqHCt2YbBYgLJQ6phExVlMF99yS3TFPKwrzk6X5qg=
+			</data>
+		</dict>
 		<key>Resources/Glass.aiff</key>
 		<dict>
 			<key>hash2</key>
@@ -49,7 +60,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OFPz6rmAyZGRXpnCpz0satWLsHhe5D+nKRUREO/dPII=
+			R9kiRvIwNhqDwaC020yWb+dKsG6p5zBCDg+EoSRWNZ0=
 			</data>
 		</dict>
 		<key>Resources/Hilal_Hilal.bundle/Contents/Resources/methods.json</key>

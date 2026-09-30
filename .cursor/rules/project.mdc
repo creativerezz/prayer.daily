@@ -3,7 +3,7 @@ description: pray.daily project overview, commands, and invariants
 alwaysApply: true
 ---
 
-pray.daily is a prayer/fasting companion. One shared Swift core in `Sources/Hilal/` powers a macOS menu bar app (SwiftPM, macOS 14+) and an iPhone app (`ios/`, XcodeGen, iOS 17+). Full details: @CLAUDE.md
+pray.daily is a prayer/fasting companion. One shared Swift core in `Sources/Hilal/` powers a macOS menu bar app (SwiftPM, macOS 14+) and an iPhone app (`Assets/ios/`, XcodeGen, iOS 17+). Full details: @CLAUDE.md
 
 - Build Mac app: `./build.sh` (release build, assembles and ad-hoc signs `pray.daily.app`). Never hand-edit `pray.daily.app`.
 - Test: `./test.sh`; `./test.sh --live` also hits AlAdhan and Apple's geocoder.

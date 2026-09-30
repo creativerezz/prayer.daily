@@ -56,11 +56,33 @@ struct PrayerService: PrayerLoading {
         var raw: [String: Day] = [probeKey: probe]
         let offset = min(2, max(-2, preferences.hijriOffset))
         let needed = Set(0...6).union((0...6).map { $0 + offset }).sorted()
-        for dayOffset in needed {
-            try Task.checkCancellation()
+        var missing = needed.compactMap { dayOffset -> String? in
             let date = calendar.date(byAdding: .day, value: dayOffset, to: now)!
             let key = PrayerClock.dateKey(date, in: zone)
-            if raw[key] == nil { raw[key] = try await fetch(date: key, preferences: preferences) }
+            return raw[key] == nil ? key : nil
+        }
+        while !missing.isEmpty {
+            try Task.checkCancellation()
+            let batch = Array(missing.prefix(4))
+            let fetched = try await withThrowingTaskGroup(of: (String, Day).self, returning: [(String, Day)].self) { group in
+                for key in batch {
+                    group.addTask {
+                        try Task.checkCancellation()
+                        return (key, try await self.fetch(date: key, preferences: preferences))
+                    }
+                }
+                var results: [(String, Day)] = []
+                do {
+                    for try await result in group { results.append(result) }
+                } catch {
+                    group.cancelAll()
+                    throw error
+                }
+                return results
+            }
+            try Task.checkCancellation()
+            for (key, day) in fetched { raw[key] = day }
+            missing.removeFirst(batch.count)
         }
         let days = try (0...6).map { dayOffset -> Day in
             let date = calendar.date(byAdding: .day, value: dayOffset, to: now)!

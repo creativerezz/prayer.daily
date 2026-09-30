@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04F69D7E10182465C0688B20 /* Pop.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 78D03BBF54BBBC525625B2B5 /* Pop.aiff */; };
+		25526DBABBA056441B89F979 /* Azan.aiff in Resources */ = {isa = PBXBuildFile; fileRef = AFC2971F7B9DCA6B548D3F94 /* Azan.aiff */; };
 		2E2901B0CA9138D38BF0B544 /* MobileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69C6C8975775A7FB444C7B /* MobileSettings.swift */; };
 		3131682EC2CDBE1CB37CEF19 /* Ping.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E1AE7689A97598345C4B447A /* Ping.aiff */; };
 		35641557EC714367ACBDFBBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F9D59A8DC2B395CCF04165C /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		A41FA568F4DA9662DE8F4628 /* Reminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminders.swift; sourceTree = "<group>"; };
 		A474EA4F4D4AA66F85CA397E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AC2BBB82A1C4AEFB56CAE5E7 /* PrayDailyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayDailyApp.swift; sourceTree = "<group>"; };
+		AFC2971F7B9DCA6B548D3F94 /* Azan.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Azan.aiff; sourceTree = "<group>"; };
 		BC69C6C8975775A7FB444C7B /* MobileSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileSettings.swift; sourceTree = "<group>"; };
 		C2F8884C2722189C3FE4326E /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		D030282DC91C4FC5CCFF7519 /* MobileRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileRoot.swift; sourceTree = "<group>"; };
@@ -50,12 +52,13 @@
 		47EE6E858102B17C6D1F0AF4 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				AFC2971F7B9DCA6B548D3F94 /* Azan.aiff */,
 				22ED2A7D2D62389024C3C394 /* Glass.aiff */,
 				E1AE7689A97598345C4B447A /* Ping.aiff */,
 				78D03BBF54BBBC525625B2B5 /* Pop.aiff */,
 			);
 			name = Sounds;
-			path = ../Resources/Sounds;
+			path = ../../Resources/Sounds;
 			sourceTree = "<group>";
 		};
 		8DDB3350CD44E5BED4BD22D5 /* Products */ = {
@@ -102,7 +105,7 @@
 				90B8F9CF23CE2A2BB3E5337A /* Timing.swift */,
 			);
 			name = Hilal;
-			path = ../Sources/Hilal;
+			path = ../../Sources/Hilal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35641557EC714367ACBDFBBA /* Assets.xcassets in Resources */,
+				25526DBABBA056441B89F979 /* Azan.aiff in Resources */,
 				E7EFD92D0FE953E46638BD65 /* Glass.aiff in Resources */,
 				FFF46155A27DDBA514916440 /* LaunchScreen.storyboard in Resources */,
 				3131682EC2CDBE1CB37CEF19 /* Ping.aiff in Resources */,
