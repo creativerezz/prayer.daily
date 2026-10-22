@@ -16,14 +16,6 @@
 		<data>
 		kpI6Goey2mVJzq8Tbl71F2ToLI0=
 		</data>
-		<key>Resources/Hilal_Hilal.bundle/Contents/Info.plist</key>
-		<data>
-		6R5Aqrb5T26YleRbjm//nVf14e4=
-		</data>
-		<key>Resources/Hilal_Hilal.bundle/Contents/Resources/methods.json</key>
-		<data>
-		aOwyD6QujXjvV1myYQF97insRxY=
-		</data>
 		<key>Resources/Ping.aiff</key>
 		<data>
 		Xb+mQbvArXBgjcMcQzJnYf3bPDA=
@@ -31,6 +23,14 @@
 		<key>Resources/Pop.aiff</key>
 		<data>
 		8mnxGbklVkj+cS0P8XESNsGcsno=
+		</data>
+		<key>Resources/pray.daily_PrayDaily.bundle/Contents/Info.plist</key>
+		<data>
+		vFTGu5pecdU4QkXiuBvBB5pMeFI=
+		</data>
+		<key>Resources/pray.daily_PrayDaily.bundle/Contents/Resources/methods.json</key>
+		<data>
+		aOwyD6QujXjvV1myYQF97insRxY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -56,20 +56,6 @@
 			bG9cauIaHlf+nlySXXZuhzSpyHApB2YW/yRBULeFxnM=
 			</data>
 		</dict>
-		<key>Resources/Hilal_Hilal.bundle/Contents/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			R9kiRvIwNhqDwaC020yWb+dKsG6p5zBCDg+EoSRWNZ0=
-			</data>
-		</dict>
-		<key>Resources/Hilal_Hilal.bundle/Contents/Resources/methods.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			X8QOhnFG2m1LP6eCni3RjuSv6VPy0PujMm0XXloJUsY=
-			</data>
-		</dict>
 		<key>Resources/Ping.aiff</key>
 		<dict>
 			<key>hash2</key>
@@ -82,6 +68,20 @@
 			<key>hash2</key>
 			<data>
 			C+7Nqyd2Pl6a3b5BhBmMFO2QIgu/M/Qf3KGycGQOytA=
+			</data>
+		</dict>
+		<key>Resources/pray.daily_PrayDaily.bundle/Contents/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sUUDFSCWZTZ5l3nJkqRYdZhtUA7T/HzMxfj3n1vkVUM=
+			</data>
+		</dict>
+		<key>Resources/pray.daily_PrayDaily.bundle/Contents/Resources/methods.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			X8QOhnFG2m1LP6eCni3RjuSv6VPy0PujMm0XXloJUsY=
 			</data>
 		</dict>
 	</dict>

@@ -5,7 +5,7 @@ alwaysApply: false
 ---
 
 - `ios/project.yml` is the source of truth. After editing it, run `xcodegen generate --spec ios/project.yml` from the repo root; don't hand-edit `PrayDaily.xcodeproj`.
-- The iOS target compiles `../Sources/Hilal` except `Hilal.swift` (macOS UI) and bundles `methods.json` and `../Resources/Sounds` as resources. iOS-only views live in `ios/PrayDaily/`.
+- The iOS target compiles `../Sources/PrayDaily` except `MacApp.swift` (macOS UI) and bundles `methods.json` and `../Resources/Sounds` as resources. iOS-only views live in `ios/PrayDaily/`.
 - Bundle ID `com.reza.praydaily`, team `G56KC8CS7Z`, automatic signing.
 - Select Xcode per command with `DEVELOPER_DIR`; never change the global `xcode-select`. The TestFlight-accepted Xcode 27.1 is at `.build/toolchains/xcode-27.1/Xcode.app`.
 - Bump `CURRENT_PROJECT_VERSION` in `project.yml` before each new TestFlight upload. Archive/upload steps are in `ios/README.md`.

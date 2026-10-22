@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>26B5091g</string>
+	<string>26B118</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleIdentifier</key>
-	<string>hilal.Hilal.resources</string>
+	<string>pray.daily.PrayDaily.resources</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Hilal_Hilal</string>
+	<string>pray.daily_PrayDaily</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -21,19 +21,19 @@
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>26A425</string>
+	<string>26B5091g</string>
 	<key>DTPlatformName</key>
 	<string>macosx</string>
 	<key>DTPlatformVersion</key>
-	<string>27.0</string>
+	<string>27.2</string>
 	<key>DTSDKBuild</key>
-	<string>26A425</string>
+	<string>26B5091g</string>
 	<key>DTSDKName</key>
-	<string>macosx27.0</string>
+	<string>macosx27.2</string>
 	<key>DTXcode</key>
-	<string>2700</string>
+	<string>2720</string>
 	<key>DTXcodeBuild</key>
-	<string>27A266a</string>
+	<string>27B5028f</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>14.0</string>
 </dict>

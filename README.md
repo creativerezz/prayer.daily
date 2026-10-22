@@ -6,7 +6,7 @@ A native prayer and fasting companion for iPhone and Mac. The iPhone app require
 
 Open `pray.daily.app`. Click the moon in the menu bar, enter a city and country or street address, and choose **Find location**. Alternatively, choose **Use my location** and allow macOS Location Services. No location is assumed on first launch.
 
-The ellipsis menu opens a dashboard window, refreshes times, or quits the app. The original bundle identifier (`com.reza.hilal`) is retained so existing preferences carry over after the rename. Swift's internal target remains `Hilal`; the executable and app bundle are named `pray.daily`.
+The ellipsis menu opens a dashboard window, refreshes times, or quits the app. The Swift target is `PrayDaily`; the executable and app bundle are named `pray.daily` (bundle ID `com.reza.praydaily`).
 
 ## Settings
 

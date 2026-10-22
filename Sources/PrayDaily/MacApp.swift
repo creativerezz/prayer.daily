@@ -1,7 +1,7 @@
 import AppKit
 import SwiftUI
 
-@main struct HilalApp: App {
+@main struct PrayDailyApp: App {
     @StateObject private var store = Store()
     var body: some Scene {
         MenuBarExtra {
