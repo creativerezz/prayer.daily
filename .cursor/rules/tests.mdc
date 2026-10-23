@@ -1,11 +1,11 @@
 ---
 description: How the standalone Swift test harness works
-globs: Tests/**/*.swift,test.sh,Sources/PrayDaily/*.swift
+globs: Tests/**/*.swift,test.sh,Sources/PrayDaily/*.swift,scripts/TestFlight/*.swift
 alwaysApply: false
 ---
 
 - Tests don't use XCTest or `swift test`. `test.sh` compiles each test file with `swiftc` against an explicit source list and runs the binary.
-- `TimingTests.swift` compiles with only `Timing.swift`. `BehaviorTests.swift` compiles with `Timing, Preferences, PrayerService, Reminders, NotificationService, Model`. `MacApp.swift` (macOS UI, `@main`) is excluded.
+- `TimingTests.swift` compiles with only `Timing.swift`. `BehaviorTests.swift` compiles with `Timing, Preferences, PrayerService, Reminders, NotificationService, Model`. `MacApp.swift` (macOS UI, `@main`) is excluded. `TestFlightTests.swift` compiles with only `scripts/TestFlight/TestFlight.swift` and uses `FakeConnect`/`FakeRunner`; it must never run `xcodebuild`, upload, or invite for real.
 - When a new source file becomes a dependency of `Store` or the helpers, add it to the matching `swiftc` line in `test.sh`.
 - Add behavior cases as `try await test("name") { ... }` using `check(condition, "message")` (precondition-based: the first failure aborts the run).
 - Use the existing fakes (`FakeLoader`, `FakeReminders`), fixture helpers, an isolated `UserDefaults` suite, and an injected `now`; never touch real notifications, location, or `.standard` defaults.

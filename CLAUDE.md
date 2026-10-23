@@ -14,13 +14,16 @@ pray.daily — a native prayer/fasting companion. One shared Swift core (`Source
 
 ```sh
 ./build.sh           # swift build -c release, assemble + ad-hoc sign pray.daily.app
-./test.sh            # timing tests + behavior tests (offline, mocked)
-./test.sh --live     # additionally hits the real AlAdhan API and Apple's geocoder
+./test.sh            # timing, behavior and TestFlight tests (offline, mocked)
+./test.sh --live     # additionally hits the real AlAdhan API and Apple's geocoder (and, with ASC_* set, read-only App Store Connect)
+./testflight.sh release --group "Personal testing" --invite a@b.com   # xcodegen + archive + upload, wait for processing, add build to group, invite
+./testflight.sh invite --group "Personal testing" a@b.com            # invite only
 ```
 
-Tests do **not** use XCTest or `swift test`. `test.sh` compiles two standalone executables with `swiftc` from an explicit file list, then runs them:
+Tests do **not** use XCTest or `swift test`. `test.sh` compiles three standalone executables with `swiftc` from an explicit file list, then runs them:
 - `Tests/PrayDailyTests/TimingTests.swift` — with only `Timing.swift`.
 - `Tests/PrayDailyTests/BehaviorTests.swift` — with `Timing, Preferences, PrayerService, Reminders, NotificationService, Model` (not `MacApp.swift`: macOS UI + `@main`).
+- `Tests/PrayDailyTests/TestFlightTests.swift` — with only `scripts/TestFlight/TestFlight.swift`; uses `FakeConnect` (in-memory App Store Connect) and `FakeRunner`, never real `xcodebuild` or the network.
 
 Gotchas:
 - **A new source file that `Store` depends on must be added to the matching `swiftc` line in `test.sh`.** Nothing else compiles the package for tests.
@@ -35,6 +38,8 @@ DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer \
   xcodebuild -project Assets/ios/PrayDaily.xcodeproj -scheme pray.daily -destination 'generic/platform=iOS' build
 ```
 Select Xcode per command via `DEVELOPER_DIR`; don't change the global `xcode-select`. The TestFlight-accepted toolchain (Xcode 27.1) is extracted locally at `.build/toolchains/xcode-27.1/Xcode.app` — `.build/` is gitignored, so it won't exist on a fresh clone. Don't hand-edit `PrayDaily.xcodeproj`.
+
+TestFlight (`scripts/TestFlight/`, run via `./testflight.sh`): checks versions and the build number against App Store Connect and validates emails/group before building; needs `ASC_KEY_ID`, `ASC_ISSUER_ID` and the `.p8` (`ASC_KEY_PATH`, default `~/.appstoreconnect/private_keys/AuthKey_<ID>.p8`) for anything past the upload. `--dry-run` prints the commands. Uses `DEVELOPER_DIR`, else the local 27.1 toolchain.
 
 Versioning: `Assets/ios/project.yml` holds `MARKETING_VERSION` and `CURRENT_PROJECT_VERSION`; keep `Resources/Info.plist` (`CFBundleShortVersionString`, `CFBundleVersion`) aligned with it. Rules live in `VERSIONING.md` — bump the build number for every upload and never reuse an accepted one.
 

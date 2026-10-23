@@ -22,6 +22,8 @@ xcodebuild -exportArchive \
   -exportPath .build/distribution/Upload -allowProvisioningUpdates
 ```
 
+Or run the whole pipeline from the repository root with `./testflight.sh release --group "Personal testing" --invite someone@example.com` (add `--dry-run` to print it first); `./testflight.sh invite --group NAME EMAIL...` invites without building. Waiting for processing and invites need an App Store Connect API key in `ASC_KEY_ID`/`ASC_ISSUER_ID`.
+
 `Assets/ios/UploadOptions.plist` uploads for internal TestFlight testing. `Assets/ios/ExportOptions.plist` exports a distribution IPA locally. Neither submits an App Store release. Increment `CURRENT_PROJECT_VERSION` before subsequent accepted uploads.
 
 ## Assets and privacy
